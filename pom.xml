@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>zzc.springboot</groupId>
+    <artifactId>springboot-1.x</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>springboot-001-helloworld</module>
+        <module>springboot-002-configuration</module>
+        <module>springboot-003-log</module>
+        <module>springboot-004-web</module>
+        <module>springboot-005-jsp</module>
+        <module>springboot-006-docker</module>
+        <module>springboot-007-jdbc</module>
+        <module>springboot-008-druid</module>
+        <module>springboot-008-druid</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <!-- 自定义属性 -->
+    <properties>
+        <!-- 统一字符集编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 指定编译版本 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <junit.version>4.12</junit.version>
+        <mysql.version>5.1.48</mysql.version>
+    </properties>
+
+    <!--
+        父项目：spring-boot-starter-parent
+        spring-boot-starter-parent的父项目：
+        	<parent>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.5.17.RELEASE</version>
+                <relativePath>../../spring-boot-dependencies</relativePath>
+            </parent>
+            真正管理spring boot应用里的所有依赖版本
+
+        Spring Boot的版本仲裁中心：
+            导入依赖默认是不需要写版本；(没有在dependencies里管理的依赖自然需要声明版本号)
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.22.RELEASE</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.18</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+</project>
