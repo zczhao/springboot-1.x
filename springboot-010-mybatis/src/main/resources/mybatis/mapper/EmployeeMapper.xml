@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zzc.springboot.mapper.EmployeeMapper">
+    <!--
+    Employee getEmployeeById(Integer id);
+
+    int insertEmployeeById(Employee employee);
+    -->
+    <select id="getEmployeeById" resultType="zzc.springboot.bean.Employee">
+        SELECT * FROM employee WHERE id = #{id}
+    </select>
+
+    <insert id="insertEmployeeById">
+        INSERT INTO employee(last_name,email,gender,dept_id) VALUES(#{latName},#{email},#{gender},#{deptId});
+    </insert>
+</mapper>
