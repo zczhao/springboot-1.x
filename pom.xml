@@ -18,6 +18,9 @@
         <module>springboot-008-druid</module>
         <module>springboot-009-mybatis</module>
         <module>springboot-010-mybatis</module>
+        <module>springboot-011-springdata-jpa</module>
+        <module>springboot-012-principle</module>
+        <module>springboot-013-starters</module>
     </modules>
     <packaging>pom</packaging>
 
