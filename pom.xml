@@ -21,6 +21,9 @@
         <module>springboot-011-springdata-jpa</module>
         <module>springboot-012-principle</module>
         <module>springboot-013-starters</module>
+        <module>springboot-014-form-validate</module>
+        <module>springboot-015-aop</module>
+        <module>springboot-016-exception</module>
     </modules>
     <packaging>pom</packaging>
 
